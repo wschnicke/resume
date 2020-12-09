@@ -1,0 +1,308 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[11pt,letterpaper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+% setup hyperref
+\usepackage{hyperref}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{[ScopeOne-Regular.ttf]}
+  \setsansfont{[Questrial-Regular.ttf]}
+  \renewcommand{\familydefault}{\rmdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\rmdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{LightBlue}{HTML}{3C89EA}
+\colorlet{name}{black}
+\colorlet{tagline}{LightBlue}
+\colorlet{heading}{LightGrey}
+\colorlet{headingrule}{LightBlue}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{LightBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\sffamily}
+\renewcommand{\personalinfofont}{\small}
+\renewcommand{\cvsectionfont}{\LARGE\sffamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\rmfamily\large\bfseries}
+\renewcommand{\cveventfont}{\sffamily}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Will Schnicke}
+\tagline{Software Engineer}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{me}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{wschnicke@live.com}
+  \phone{(513) 509-2985}
+  \linkedin{willschnicke}
+  \github{wschnicke}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.3}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Education}
+
+\cveventleft{The Ohio State University}{B.Sc.\ in Computer Science and Engineering}{Graduated May 2019}{}
+\par 3.7 GPA, Minor in Philosophy
+
+
+\medskip
+
+\cvsection{Skills}
+
+\cvtag{JavaScript}
+\cvtag{TypeScript}
+\cvtag{Java}
+\cvtag{C}
+\cvtag{C\#}
+\cvtag{HTML}
+\cvtag{MATLAB}
+\cvtag{Python}
+\cvtag{Kotlin}
+
+\divider\smallskip
+
+\cvtag{React}
+\cvtag{Angular}
+\cvtag{node.js}
+\cvtag{Redux}
+\cvtag{Jest}
+\cvtag{Enzyme}
+\cvtag{CSS3}
+\cvtag{SASS}
+\cvtag{i18next}
+\cvtag{.NET}
+
+\divider\smallskip
+
+\cvtag{git}
+\cvtag{Unix}
+\cvtag{AWS}
+\cvtag{REST}
+\cvtag{SOAP}
+\cvtag{object-oriented design}
+\cvtag{functional programming}
+
+
+\medskip
+
+\cvsection{Projects}
+
+\cveventleft{Business Reports Dashboard Capstone}{}{%Spring 2019
+}{}
+\par Designed and built a business analytics tool for sponsoring business, using Angular and node.js
+
+\divider
+
+\cveventleft{FEH Robotics Course Store}{%2017-2019
+}{}{}
+\par Re-designed course parts store with real time order and inventory updates
+
+
+\medskip
+
+\cvsection{Other Interests}
+
+\cvtag{Guitar}
+\cvtag{Philosophy}
+\cvtag{Skiing}
+\cvtag{Rock Climbing}
+\cvtag{Disc Golf}
+\cvtag{Improv Music}
+\cvtag{Education}
+
+% \cvsection{Languages}
+
+% \cvskill{English}{5}
+% \divider
+
+% \cvskill{Spanish}{4}
+% \divider
+
+% \cvskill{German}{3}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+
+% \divider
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Experience}
+
+\cvevent{Amazon.com}{Software Development Engineer}{Started August 2019}{Seattle, WA    }
+\par Seller Apps team creating the \href{https://sellercentral.amazon.com/apps/store}{\color{accent} Marketplace Appstore}
+\begin{itemize}
+\item Helped drive listings on appstore from 32 to over 1500 apps
+\item Created text search functionality to improve discoverability of apps
+\item Built improved feedback request system that increased use by over 550\%
+\item Designed and developed an analytics page to give developers insights into app performance
+\end{itemize}
+
+\cvtag{TypeScript}
+\cvtag{Java}
+\cvtag{React}
+\cvtag{Redux}
+\cvtag{AWS}
+\cvtag{Jest}
+\cvtag{Enzyme}
+\cvtag{REST}
+
+\divider
+
+\cvevent{Amazon.com}{Software Development Engineer Intern}{Summer 2018}{Seattle, WA }
+\par Project—Manage Your Apps for Marketplace Appstore
+\begin{itemize}
+\item Provided centralized control of programmatic accesses to seller data by building app management page
+\item Improved seller experience by creating single view for all authorized appls
+%\item Developed internationalization plan alongside product management team
+\item Promoted codebase quality by creating linting rules and accessibility monitors
+\end{itemize}
+
+\cvtag{TypeScript}
+\cvtag{Java}
+\cvtag{React}
+\cvtag{Redux}
+\cvtag{Jest}
+\cvtag{Enzyme}
+\cvtag{REST}
+\cvtag{i18next}
+
+\divider
+
+\cvevent{Engineering Education Department, OSU}{FEH Undergraduate Teaching Assistant}{May 2016-May 2019}{Columbus, OH}
+\begin{itemize}
+    \item Designed autonomous robotics competition software, database, and website
+    \item Assisted instructor in honors intro programming and engineering course
+    \item Instructed students in software fundamentals in MATLAB, C/C++, and Excel
+\end{itemize}
+
+\cvtag{Education}
+\cvtag{C}
+\cvtag{C++}
+\cvtag{MATLAB}
+\cvtag{Excel}
+\cvtag{C\#}
+\cvtag{ASP.NET}
+\cvtag{SQL}
+
+\divider
+
+\cvevent{General Electric Aviation}{Engineering Intern}{Summer 2017}{Cincinnati, OH}
+\begin{itemize}
+    \item Developed pilot program with Google Glass to improve quality and efficiency
+    \item Analyzed human factors of engine maintenance using Siemens Jack 8.4
+\end{itemize}
+
+\divider
+
+\cvevent{Cincinnati Insurance Co.}{Software Developer Intern}{Summer 2016}{Fairfield, OH}
+\begin{itemize}
+    \item Developed server resource monitoring applications in C\# with .NET
+    \item Ported legacy C program to C\# while adding enhanced functionality
+    \item Designed interactive collegiate recruitment web application
+\end{itemize}
+
+\cvtag{C\#}
+\cvtag{C}
+\cvtag{.NET}
+\cvtag{Angular}
+\cvtag{JavaScript}
+
+\end{paracol}
+
+
+\end{document}
