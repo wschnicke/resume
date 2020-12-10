@@ -278,7 +278,7 @@
     {\personalinfofont\@personalinfo\par}
     \end{minipage}\hfill%
     \altacv@right@photos\par%
-  \endgroup\medskip
+  \endgroup
 }
 
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}

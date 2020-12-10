@@ -14,7 +14,7 @@
 %% If you need to pass whatever options to xcolor
 \PassOptionsToPackage{dvipsnames}{xcolor}
 
-%% If you are using \orcid or academicons
+%% If you are using \orcid or academiconshttps://www.overleaf.com/project/5fd03b1da7eb149f51a9f18f
 %% icons, make sure you have the academicons
 %% option here, and compile with XeLaTeX
 %% or LuaLaTeX.
@@ -84,12 +84,15 @@
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
 
+% set \bubblestrue to enable the technology bubbles under job positions
+\newif\ifbubbles
+\bubblestrue
+
 \begin{document}
 \name{Will Schnicke}
 \tagline{Software Engineer}
 %% You can add multiple photos on the left or right
-\photoR{2.8cm}{me}
-% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+\photoR{3.5cm}{me}
 
 \personalinfo{%
   % Not all of these are required!
@@ -129,11 +132,11 @@
 
 \cvsection{Skills}
 
+% Programming languages
 \cvtag{JavaScript}
 \cvtag{TypeScript}
 \cvtag{Java}
 \cvtag{C}
-\cvtag{C\#}
 \cvtag{HTML}
 \cvtag{MATLAB}
 \cvtag{Python}
@@ -141,6 +144,7 @@
 
 \divider\smallskip
 
+% Frontend technologies
 \cvtag{React}
 \cvtag{Angular}
 \cvtag{node.js}
@@ -150,10 +154,10 @@
 \cvtag{CSS3}
 \cvtag{SASS}
 \cvtag{i18next}
-\cvtag{.NET}
 
 \divider\smallskip
 
+% Misc technologies
 \cvtag{git}
 \cvtag{Unix}
 \cvtag{AWS}
@@ -180,7 +184,7 @@
 
 \medskip
 
-\cvsection{Other Interests}
+\cvsection{Personal Interests}
 
 \cvtag{Guitar}
 \cvtag{Philosophy}
@@ -189,6 +193,7 @@
 \cvtag{Disc Golf}
 \cvtag{Improv Music}
 \cvtag{Education}
+\cvtag{Board Games}
 
 % \cvsection{Languages}
 
@@ -226,40 +231,45 @@
 \cvevent{Amazon.com}{Software Development Engineer}{Started August 2019}{Seattle, WA    }
 \par Seller Apps team creating the \href{https://sellercentral.amazon.com/apps/store}{\color{accent} Marketplace Appstore}
 \begin{itemize}
-\item Helped drive listings on appstore from 32 to over 1500 apps
-\item Created text search functionality to improve discoverability of apps
-\item Built improved feedback request system that increased use by over 550\%
-\item Designed and developed an analytics page to give developers insights into app performance
+    % \item Helped drive listings on appstore from 32 to over 1500 apps
+    \item Created text search functionality to improve discoverability of apps
+    \item Added suite of client metrics tooling to allow our team to collect and analyze how users interact with our sites enabling the collection of over 10,000 metrics data per day
+    \item Designed and developed an analytics page to give developers insights into their app's performance on the appstore, using client metrics and usage data
+    \item Built improved feedback request system that increased response rate by over 550\% by recording behavior and prompting when conditions were met
 \end{itemize}
 
-\cvtag{TypeScript}
-\cvtag{Java}
-\cvtag{React}
-\cvtag{Redux}
-\cvtag{AWS}
-\cvtag{Jest}
-\cvtag{Enzyme}
-\cvtag{REST}
+\ifbubbles
+    \cvtag{TypeScript}
+    \cvtag{Java}
+    \cvtag{React}
+    \cvtag{Redux}
+    \cvtag{AWS}
+    \cvtag{Jest}
+    \cvtag{Enzyme}
+    \cvtag{REST}
+\fi
 
 \divider
 
 \cvevent{Amazon.com}{Software Development Engineer Intern}{Summer 2018}{Seattle, WA }
 \par Project—Manage Your Apps for Marketplace Appstore
 \begin{itemize}
-\item Provided centralized control of programmatic accesses to seller data by building app management page
-\item Improved seller experience by creating single view for all authorized appls
-%\item Developed internationalization plan alongside product management team
-\item Promoted codebase quality by creating linting rules and accessibility monitors
+    \item Provided centralized control of programmatic accesses to seller data by building app management page
+    \item Improved seller experience by creating single view for all authorized apps
+    \item Developed internationalization plan alongside product management team to enable rapid expansion to over 30 marketplaces
+    \item Promoted code quality by creating linting rules and accessibility monitors
 \end{itemize}
 
-\cvtag{TypeScript}
-\cvtag{Java}
-\cvtag{React}
-\cvtag{Redux}
-\cvtag{Jest}
-\cvtag{Enzyme}
-\cvtag{REST}
-\cvtag{i18next}
+\ifbubbles
+    \cvtag{TypeScript}
+    \cvtag{Java}
+    \cvtag{React}
+    \cvtag{Redux}
+    \cvtag{Jest}
+    \cvtag{Enzyme}
+    \cvtag{REST}
+    \cvtag{i18next}
+\fi
 
 \divider
 
@@ -270,37 +280,49 @@
     \item Instructed students in software fundamentals in MATLAB, C/C++, and Excel
 \end{itemize}
 
-\cvtag{Education}
-\cvtag{C}
-\cvtag{C++}
-\cvtag{MATLAB}
-\cvtag{Excel}
-\cvtag{C\#}
-\cvtag{ASP.NET}
-\cvtag{SQL}
+\ifbubbles
+    \cvtag{Education}
+    \cvtag{C}
+    \cvtag{C++}
+    \cvtag{MATLAB}
+    \cvtag{Excel}
+    \cvtag{C\#}
+    \cvtag{ASP.NET}
+    \cvtag{SQL}
+\fi
 
 \divider
 
-\cvevent{General Electric Aviation}{Engineering Intern}{Summer 2017}{Cincinnati, OH}
+\cvevent{GE Aviation}{Engineering Intern}{Summer 2017}{Cincinnati, OH}
 \begin{itemize}
-    \item Developed pilot program with Google Glass to improve quality and efficiency
+    \item Developed pilot program with Google Glass and smart tools to improve quality and efficiency in assembly by providing instructions on heads-up display
+    \item Converted jet engine assembly instructions from old Powerpoint and Word format to be rendered on Google Glass using Python
     \item Analyzed human factors of engine maintenance using Siemens Jack 8.4
 \end{itemize}
 
-\divider
+\ifbubbles
+    \cvtag{Python}
+    \cvtag{Google Glass}
+    \cvtag{AR}
+    \cvtag{Project Management}
+\fi
 
-\cvevent{Cincinnati Insurance Co.}{Software Developer Intern}{Summer 2016}{Fairfield, OH}
-\begin{itemize}
-    \item Developed server resource monitoring applications in C\# with .NET
-    \item Ported legacy C program to C\# while adding enhanced functionality
-    \item Designed interactive collegiate recruitment web application
-\end{itemize}
+% \divider
 
-\cvtag{C\#}
-\cvtag{C}
-\cvtag{.NET}
-\cvtag{Angular}
-\cvtag{JavaScript}
+% \cvevent{Cincinnati Insurance Co.}{Software Developer Intern}{Summer 2016}{Fairfield, OH}
+% \begin{itemize}
+%     \item Developed server resource monitoring applications in C\# with .NET
+%     \item Ported legacy C program to C\# while adding enhanced functionality
+%     \item Designed interactive collegiate recruitment web application
+% \end{itemize}
+
+% \ifbubbles
+%     \cvtag{C\#}
+%     \cvtag{C}
+%     \cvtag{.NET}
+%     \cvtag{Angular}
+%     \cvtag{JavaScript}
+% \fi
 
 \end{paracol}
 
