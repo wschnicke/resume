@@ -260,7 +260,7 @@
 \let\photo\photoR
 
 \newcommand{\namefont}{\Huge\bfseries}
-\newcommand{\taglinefont}{\large\bfseries}
+\newcommand{\taglinefont}{\LARGE\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
 \newcommand{\cvsectionfont}{\LARGE\bfseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries}
@@ -314,14 +314,15 @@
 
 % backup of \cvevent
 \newcommand{\cveventleft}[4]{%
-  {\large\color{emphasis}#1\par}
-  \smallskip\normalsize
-  \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
-  \smallskip}
-  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
-  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
-  \medskip\normalsize
+    \cveventfont
+    {\large\color{emphasis}#1\par}
+    \smallskip\normalsize
+    \ifstrequal{#2}{}{}{
+    \textbf{\color{accent}#2}\par
+    \smallskip}
+    \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
+    \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
+    \smallskip\normalsize\normalfont
 }
 
 \newcommand{\cvachievement}[3]{%
@@ -333,7 +334,7 @@
 }
 
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners=7pt,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
 \newcommand{\cvskill}[2]{%
