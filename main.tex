@@ -36,6 +36,7 @@
 \usepackage{paracol}
 % setup hyperref
 \usepackage{hyperref}
+\usepackage{anyfontsize}
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -81,6 +82,8 @@
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
+\newcommand\unifontsize{\fontsize{11pt}{14pt}\selectfont}
+
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
 
@@ -90,7 +93,7 @@
 
 \begin{document}
 \name{Will Schnicke}
-\tagline{Software Engineer}
+\tagline{Frontend Software Engineer}
 %% You can add multiple photos on the left or right
 \photoR{3.5cm}{me}
 
@@ -99,7 +102,7 @@
   \email{wschnicke@live.com}
   \phone{(513) 509-2985}
   \linkedin{willschnicke}
-  \github{wschnicke}
+  % \github{wschnicke}
   %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
   % \orcid{0000-0000-0000-0000}
   %% You can add your own arbtrary detail with
@@ -116,18 +119,20 @@
 % \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.3}
+\columnratio{0.25}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
 
 % dont know why first two sections aren't aligned; hack to align them
-\vspace{0.5ex}
+%\vspace{1ex}
 \cvsection{Education}
 
-\cveventleft{The Ohio State University}{B.Sc.\ in Computer Science and Engineering}{Graduated May 2019}{}
-\par 3.7 GPA, Minor in Philosophy
+\cveventleft{\unifontsize{The Ohio State University}}{B.Sc.\ in Computer Science and Engineering}{Graduated May 2019}{}
+\par 3.7 GPA
+\linebreak
+Minor in Philosophy
 
 
 \medskip
@@ -138,11 +143,10 @@
 \cvtag{JavaScript}
 \cvtag{TypeScript}
 \cvtag{Java}
-\cvtag{C}
 \cvtag{HTML}
 \cvtag{MATLAB}
 \cvtag{Kotlin}
-\cvtag{Python}
+\cvtag{C}
 
 \divider\smallskip
 
@@ -162,33 +166,36 @@
 
 % Misc technologies
 \cvtag{git}
-\cvtag{Unix}
 \cvtag{AWS}
+\cvtag{GCP}
+\linebreak
+\cvtag{GraphQL}
 \cvtag{REST}
 \cvtag{SOAP}
 \cvtag{object-oriented design}
+\linebreak
 \cvtag{functional programming}
 
 
 \medskip
 
-\cvsection{Projects}
+% \cvsection{Projects}
 
-\cveventleft{Info Sec Encryption Project}{}{%Spring 2019
-}{}
-\par Developed an app for sending encrypted messages and files \linebreak
-between users by implementing RSA and AES in Python
+% \cveventleft{Info Sec Encryption Project}{}{%Spring 2019
+% }{}
+% \par Developed an app for sending encrypted messages and files \linebreak 
+% between users by implementing RSA and AES in Python
 
-\divider
+% \divider
 
-\cveventleft{FEH Robotics Course Store}{%2017-2019
-}{}{}
-\par Re-designed course parts store with real time order and inventory updates
+% \cveventleft{FEH Robotics Course Store}{%2017-2019
+% }{}{}
+% \par Re-designed course parts store with real time order and inventory updates
 
 
-\medskip
+% \medskip
 
-\cvsection{Personal Interests}
+\cvsection{Interests}
 
 \cvtag{Guitar}
 \cvtag{Philosophy}
@@ -197,50 +204,48 @@ between users by implementing RSA and AES in Python
 \cvtag{Disc Golf}
 \cvtag{Education}
 \cvtag{Board Games}
+\linebreak
 \cvtag{Improvisational Music}
-
-
-% \cvsection{Languages}
-
-% \cvskill{English}{5}
-% \divider
-
-% \cvskill{Spanish}{4}
-% \divider
-
-% \cvskill{German}{3}
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vpsace etc to make ajustments.
-
-% \divider
-
-% \cvsection{Referees}
-
-% % \cvref{name}{email}{mailing address}
-% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-% {Address Line 1\\Address line 2}
-
-% \divider
-
-% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-% {Address Line 1\\Address line 2}
 
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
 \switchcolumn
 
+\vspace{0.7ex}
 \cvsection{Experience}
 
-\cvevent{Amazon.com}{Software Development Engineer}{Started August 2019}{Seattle, WA}
+\cvevent{Snap Inc.}{Frontend Engineer           }{Started June 2021}{ Seattle, WA}
+\par Business Experience team helping brands \href{https://forbusiness.snapchat.com/}{\color{accent} build their presence on Snapchat}
+\smallskip
+\begin{itemize}
+    \item Created Spotlights page to allow businesses to view organic performance and create ads from their creative media---over 1000 organizations have run Spotlight ads
+    \item Improved on-boarding to automatically connect ad accounts and profiles, increasing connection rate over 700\%
+    \item Added support for account level policy exceptions to our ad review tool, reducing P90 handling time by 29\%
+    \item Designed and built site for ad review agents to manage account notes
+\end{itemize}
+
+\ifbubbles
+    \cvtag{TypeScript}
+    \cvtag{React}
+    \cvtag{GraphQL}
+    \cvtag{Kotlin}
+    \cvtag{Redux}
+    \cvtag{GCP}
+    \cvtag{Jest}
+    \cvtag{Enzyme}
+\fi
+
+\divider
+
+\cvevent{Amazon.com}{Frontend Engineer}{August 2019-May 2021}{Seattle, WA}
 \par Seller Apps team creating the \href{https://sellercentral.amazon.com/apps/store}{\color{accent} Marketplace Appstore}
 \smallskip
 \begin{itemize}
     % \item Helped drive listings on appstore from 32 to over 1500 apps
-    \item Created text search functionality to improve discoverability of apps
+    \item Improved discoverability of seller apps by creating text search functionality
     \item Added client metrics tooling to allow our team to analyze how users interact with our sites enabling collection of over 10,000 metrics data per day
-    \item Designed and developed an analytics page to give developers insights into their app's performance on the appstore, using client metrics and usage data
+    \item Provided developers insight into their app's performance on the appstore by designing and developing an analytics page, using client metrics and usage data
+    %\item Designed and developed an analytics page to give developers insights into their app's performance on the appstore, using client metrics and usage data
     \item Built improved feedback request system that increased response rate by over 550\% by recording behavior and prompting when conditions were met
 \end{itemize}
 
@@ -261,10 +266,10 @@ between users by implementing RSA and AES in Python
 \par Project—Manage Your Apps for Marketplace Appstore
 \smallskip
 \begin{itemize}
-    \item Provided centralized control of programmatic accesses to seller data by \linebreak building an app management page
+    \item Provided centralized control of programmatic accesses to seller data by building an app management page
     \item Improved seller experience by creating single view for all authorized apps
-    \item Developed internationalization plan alongside product management team to enable rapid expansion to over 30 marketplaces
-    \item Promoted code quality by creating linting rules and accessibility monitors
+    \item Developed i18n plan to enable rapid expansion to over 30 marketplaces
+    %\item Promoted code quality by creating linting rules and accessibility monitors
 \end{itemize}
 
 \ifbubbles
@@ -298,21 +303,21 @@ between users by implementing RSA and AES in Python
     \cvtag{SQL}
 \fi
 
-\divider
+% \divider
 
-\cvevent{GE Aviation}{Engineering Intern}{Summer 2017}{Cincinnati, OH}
-\begin{itemize}
-    \item Developed pilot program with Google Glass and smart tools to improve quality and efficiency in assembly by providing instructions on heads-up display
-    \item Converted jet engine assembly instructions from old Powerpoint and Word format to be rendered on Google Glass using Python
-    \item Analyzed human factors of engine maintenance using Siemens Jack 8.4
-\end{itemize}
+% \cvevent{GE Aviation}{Engineering Intern}{Summer 2017}{Cincinnati, OH}
+% \begin{itemize}
+%     \item Developed pilot program with Google Glass and smart tools to improve quality and efficiency in assembly by providing instructions on heads-up display
+%     \item Converted jet engine assembly instructions from old Powerpoint and Word format to be rendered on Google Glass using Python
+%     \item Analyzed human factors of engine maintenance using Siemens Jack 8.4
+% \end{itemize}
 
-\ifbubbles
-    \cvtag{Python}
-    \cvtag{Google Glass}
-    \cvtag{AR}
-    \cvtag{Project Management}
-\fi
+% \ifbubbles
+%     \cvtag{Python}
+%     \cvtag{Google Glass}
+%     \cvtag{AR}
+%     \cvtag{Project Management}
+% \fi
 
 % \divider
 
